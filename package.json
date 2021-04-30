@@ -1,0 +1,37 @@
+{
+	"name": "dnd-graph",
+	"version": "1.0.0",
+	"description": "Some graphics and data about Dungeon & Dragons ",
+	"main": "index.js",
+	"scripts": {
+		"start": "concurrently \"npm:dev\"",
+		"dev": "NODE_ENV=development concurrently \"npm:server\" \"npm:webpack\"",
+		"prod": "NODE_ENV=production concurrently \"npm:webpack\"",
+		"build": "concurrently \"npm:prod\"",
+		"server": "browser-sync start --config bs-config.js",
+		"webpack": "webpack"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.13.15",
+		"@babel/polyfill": "^7.12.1",
+		"@babel/preset-env": "^7.13.15",
+		"babel-loader": "^8.2.2",
+		"browser-sync": "^2.26.14",
+		"concurrently": "^6.0.2",
+		"copy-webpack-plugin": "^8.1.1",
+		"css-loader": "^5.2.4",
+		"css-minimizer-webpack-plugin": "^2.0.0",
+		"del": "^6.0.0",
+		"dotenv": "^8.2.0",
+		"gulp": "^4.0.2",
+		"mini-css-extract-plugin": "^1.5.0",
+		"postcss-loader": "^5.2.0",
+		"postcss-preset-env": "^6.7.0",
+		"webpack": "^5.34.0",
+		"webpack-cli": "^4.6.0",
+		"webpack-dev-middleware": "^4.1.0",
+		"webpack-hot-middleware": "^2.25.0"
+	},
+	"author": "Thomas Robert",
+	"license": "MIT"
+}

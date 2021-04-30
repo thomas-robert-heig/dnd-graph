@@ -1,0 +1,9 @@
+const dotenv = require("dotenv").config();
+
+module.exports = {
+	"files": process.env.PATH_DESTINATION + "/*",
+	"server": process.env.PATH_DESTINATION,
+	"port": 3000,
+	"open": false,
+	"notify": false
+};

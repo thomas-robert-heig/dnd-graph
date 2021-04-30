@@ -1,0 +1,16 @@
+# Dev environmnent
+.env
+node_modules
+npm-debug.log
+dist
+bs-config.js
+
+# Mac OS
+.DS_STORE
+
+# Windows
+Thumbs.db
+
+# IDE
+.vscode/
+.jsbeautifyrc
