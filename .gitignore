@@ -4,7 +4,7 @@ node_modules
 npm-debug.log
 dist
 bs-config.js
-./src/dnd_chars_all.json
+src/dnd_chars_all.json
 
 # Mac OS
 .DS_STORE

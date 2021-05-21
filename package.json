@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "Some graphics and data about Dungeon & Dragons ",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
 		"start": "concurrently \"npm:dev\"",
 		"dev": "cross-env NODE_ENV=development concurrently \"npm:server\" \"npm:webpack\"",
@@ -34,5 +35,8 @@
 		"webpack-hot-middleware": "^2.25.0"
 	},
 	"author": "Thomas Robert",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"d3": "^6.7.0"
+	}
 }
