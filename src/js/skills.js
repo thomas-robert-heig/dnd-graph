@@ -2,7 +2,15 @@
  * Skills graph
  ********************************/
 import { PREP_CHARS } from "./prepare.js";
-import { select, scaleBand, scaleLinear, axisLeft, axisBottom, max } from "d3";
+import {
+	select,
+	scaleBand,
+	scaleLinear,
+	axisLeft,
+	axisBottom,
+	max,
+	descending,
+} from "d3";
 
 /* Prepare skills data
  ********************************/
@@ -25,7 +33,11 @@ let getTotalSkills = (data) => {
 		})
 	);
 
-	return preparedTotalSkills;
+	let sortedTotalSKills = preparedTotalSkills
+		.slice()
+		.sort((a, b) => descending(a.value, b.value));
+
+	return sortedTotalSKills;
 };
 
 const DATA_SKILLS = getTotalSkills(PREP_CHARS);
@@ -68,5 +80,3 @@ svg.selectAll(".node")
 	.attr("width", x.bandwidth())
 	.attr("y", (d) => y(d.value))
 	.attr("height", (d) => height - y(d.value));
-
-console.log(DATA_SKILLS);
