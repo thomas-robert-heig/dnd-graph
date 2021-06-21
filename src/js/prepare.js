@@ -3,7 +3,6 @@
  ********************************/
 import DATA from "../dnd_chars_all.json";
 const CHARS = Object.entries(DATA);
-
 let getSpells = (spells) => {
 	return Object.keys(spells)
 		.map((key) => spells[key].processedSpell)
@@ -25,6 +24,7 @@ const PREP_CHARS = CHARS.map(([nom, data]) => ({ ...data, nom }))
 		feats: d?.feats,
 		weapons: getWeapons(d?.weapons),
 		alignment: d.alignment.processedAlignment[0],
+		attributes : d.attributes
 	}))
 	.filter(
 		(d) =>
@@ -53,5 +53,4 @@ const PREP_CHARS = CHARS.map(([nom, data]) => ({ ...data, nom }))
 			d.class == "Warlock" ||
 			d.class == "Wizard"
 	);
-
 export { PREP_CHARS };
