@@ -1,121 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DND Graph</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>DND Graph</title>
-	<style>
-		* {
-			box-sizing: border-box;
-		}
+			body {
+				margin: 0 auto;
+				max-width: 1080px;
+			}
 
-		body {
-			margin: 0 auto;
-			max-width: 1080px;
-		}
+			section {
+				display: grid;
+				grid-template-rows: auto 1fr auto;
+				grid-template-columns: 1fr 1fr;
+				grid-template-areas:
+					"title title"
+					"graph graph"
+					"explanation illustration";
 
-		section {
-			display: grid;
-			grid-template-rows: auto 1fr auto;
-			grid-template-columns: 1fr 1fr;
-			grid-template-areas:
-				'title title'
-				'graph graph'
-				'explanation illustration';
-			
-
-			/* display: grid;
+				/* display: grid;
 			grid-template-rows: 1fr 1fr;
 			grid-template-columns: 1fr auto;
 			grid-template-areas:
 				"label label"
 				"input deco"; */
-		}
+			}
 
-		section > * {
-			justify-self: center;
-		}
+			section > * {
+				justify-self: center;
+			}
 
+			section > h2 {
+				grid-area: title;
+			}
 
+			section > div {
+				grid-area: explanation;
+			}
 
-		section>h2 {
-			grid-area: title;
-		}
+			section > div.graph {
+				grid-area: graph;
+			}
 
-		section>div {
-			grid-area: explanation;
-		}
+			section > img {
+				grid-area: illustration;
+			}
 
-		section>div.graph {
-			grid-area: graph;
-		}
+			.graph {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
 
-		section>img {
-			grid-area: illustration;
-		}
+	<body>
+		<header>
+			<h1>DnD 5e - Quel est le personnage le plus joué?</h1>
+			<p>
+				In eu fermentum tellus. Donec egestas, quam vel imperdiet placerat,
+				libero odio vestibulum dolor, quis viverra tellus leo id mauris.
+				Quisque nulla eros, volutpat eu dignissim non, lobortis ut justo.
+				Vestibulum nec lorem hendrerit, varius ligula nec, vehicula ante.
+				Praesent sodales ligula sed lorem posuere, at sodales turpis varius.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
+				ante sed arcu ornare laoreet ultrices nec leo. Quisque tristique
+				nibh vel turpis auctor fringilla. Nulla facilisi. Nullam sodales
+				orci vitae tortor porttitor mollis. Pellentesque orci risus, posuere
+				a nisi nec, ornare consectetur mauris. Pellentesque pharetra
+				malesuada nunc et congue. Mauris eget justo vitae odio molestie
+				cursus. Etiam fermentum justo nec scelerisque euismod. Etiam
+				imperdiet maximus elit, vel pharetra lectus vehicula sed.
+			</p>
+		</header>
 
-
-
-		.graph {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	</style>
-</head>
-
-<body>
-	<header>
-		<h1>DnD 5e - Quel est le personnage le plus joué?</h1>
-		<p>In eu fermentum tellus. Donec egestas, quam vel imperdiet placerat, libero odio vestibulum dolor, quis
-			viverra tellus leo id mauris. Quisque nulla eros, volutpat eu dignissim non, lobortis ut justo. Vestibulum
-			nec lorem hendrerit, varius ligula nec, vehicula ante. Praesent sodales ligula sed lorem posuere, at sodales
-			turpis varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis ante sed arcu ornare
-			laoreet ultrices nec leo. Quisque tristique nibh vel turpis auctor fringilla. Nulla facilisi. Nullam sodales
-			orci vitae tortor porttitor mollis. Pellentesque orci risus, posuere a nisi nec, ornare consectetur mauris.
-			Pellentesque pharetra malesuada nunc et congue. Mauris eget justo vitae odio molestie cursus. Etiam
-			fermentum justo nec scelerisque euismod. Etiam imperdiet maximus elit, vel pharetra lectus vehicula sed.</p>
-	</header>
-
-	<!-- Combinaison race/classe -->
-	<section>
-		<h2>Cominaison race/classe la plus utilisée</h2>
-		<div id="heatmap_classRace" class="graph"></div>
-		<div>
+		<!-- Combinaison race/classe -->
+		<section>
+			<h2>Cominaison race/classe la plus utilisée</h2>
+			<div id="heatmap_classRace" class="graph"></div>
 			<div>
-				<strong>Humain combattant</strong>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin sollicitudin nunc at
-					sagittis. Vivamus est magna, tincidunt vel ex sit amet, porttitor dapibus arcu. Pellentesque
-					habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus aliquet
-					ullamcorper neque, eget placerat neque consectetur nec.</p>
+				<div>
+					<strong>Humain combattant</strong>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Maecenas sollicitudin sollicitudin nunc at sagittis. Vivamus
+						est magna, tincidunt vel ex sit amet, porttitor dapibus arcu.
+						Pellentesque habitant morbi tristique senectus et netus et
+						malesuada fames ac turpis egestas. Phasellus aliquet
+						ullamcorper neque, eget placerat neque consectetur nec.
+					</p>
+				</div>
 			</div>
-		</div>
-		<img src="https://via.placeholder.com/150">
-	</section>
+			<img src="https://via.placeholder.com/150" />
+		</section>
 
-	<hr>
+		<hr />
 
-	<!-- Caractéristiques les plus utilisées -->
-	<section>
-		<h2>Top 3 des caractéristiques les plus utilisées</h2>
-		<div id="bars_skills" class="graph"></div>
-		<div>
+		<!-- Caractéristiques les plus utilisées -->
+		<section>
+			<h2>Top 3 des caractéristiques les plus utilisées</h2>
+			<div id="bars_characterstic" class="graph"></div>
 			<div>
-				<strong>Force</strong>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin sollicitudin nunc at
-					sagittis. Vivamus est magna, tincidunt vel ex sit amet, porttitor dapibus arcu. Pellentesque
-					habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus aliquet
-					ullamcorper neque, eget placerat neque consectetur nec.</p>
+				<div>
+					<strong>Force</strong>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Maecenas sollicitudin sollicitudin nunc at sagittis. Vivamus
+						est magna, tincidunt vel ex sit amet, porttitor dapibus arcu.
+						Pellentesque habitant morbi tristique senectus et netus et
+						malesuada fames ac turpis egestas. Phasellus aliquet
+						ullamcorper neque, eget placerat neque consectetur nec.
+					</p>
+				</div>
 			</div>
-		</div>
-		<img src="https://via.placeholder.com/150">
-	</section>
+			<img src="https://via.placeholder.com/150" />
+		</section>
 
-	<hr>
+		<hr />
 
-	<script src="bundle.js"></script>
-</body>
+		<section>
+			<h1>Les skills les plus utilisés</h1>
+			<div id="bars_skills" class="graph"></div>
+			<div>
+				<div>
+					<strong>Perception</strong>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Maecenas sollicitudin sollicitudin nunc at sagittis. Vivamus
+						est magna, tincidunt vel ex sit amet, porttitor dapibus arcu.
+						Pellentesque habitant morbi tristique senectus et netus et
+						malesuada fames ac turpis egestas. Phasellus aliquet
+						ullamcorper neque, eget placerat neque consectetur nec.
+					</p>
+				</div>
+			</div>
+			<img src="https://via.placeholder.com/150" />
+		</section>
 
+		<script src="bundle.js"></script>
+	</body>
 </html>
