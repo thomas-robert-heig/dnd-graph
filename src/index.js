@@ -1,5 +1,8 @@
 import { select } from "d3";
 
+import DATA from './dnd_chars_all.json';
+const CHARS = Object.entries(DATA);
+
 const svg = select("#graph")
 	.append("svg")
 	.attr("width", 500)
