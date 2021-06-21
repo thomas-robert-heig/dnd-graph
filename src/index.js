@@ -5,7 +5,7 @@
 /* Import & Settings
  ********************************/
 import { select, sum, scaleLinear, max } from "d3";
-import { DATA_SKILLS } from "./js/skills";
+import "./js/skills";
 import "./js/classRace";
 import "./js/attributes";
 
