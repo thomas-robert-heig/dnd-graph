@@ -11,6 +11,7 @@ import "./js/attributes";
 import "./js/skills";
 import "./js/spells";
 import "./js/feats";
+import "./js/alignments";
 
 /* Define canvas
  ********************************/

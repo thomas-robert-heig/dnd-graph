@@ -45,12 +45,12 @@ const arcCreator = arc()
 //Définition de la couleur
 const color = ({ data }) => {
     switch (data.name) {
-        case 'Charisma': return '#E65B07'
-        case 'Constitution': return '#F86A12'
-        case 'Dexterity': return '#F87625'
-        case 'Intelligence': return '#F98339'
-        case 'Strength': return '#F98F4D'
-        case 'Wisdom': return '#F99C62'
+        case 'Charisma': return '#FD6435'
+        case 'Constitution': return '#FD4B13'
+        case 'Dexterity': return '#FD450D'
+        case 'Intelligence': return '#FD7349'
+        case 'Strength': return '#FD6435'
+        case 'Wisdom': return '#FD6435'
     }
 }
 
@@ -63,7 +63,9 @@ group.selectAll('path')
     .enter()
     .append('path')
     .attr('d', arcCreator)
-    .attr('fill', color);
+    .attr('fill', color)
+    .attr("stroke", "white")
+    .style("stroke-width", "2px");
 
 group.selectAll('text')
     .data(pieData)
