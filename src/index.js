@@ -10,6 +10,7 @@ import "./js/classRace";
 import "./js/attributes";
 import "./js/skills";
 import "./js/spells";
+import "./js/feats";
 
 /* Define canvas
  ********************************/

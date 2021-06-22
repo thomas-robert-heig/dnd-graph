@@ -1,5 +1,5 @@
 /********************************
- * Spells graph
+ * feat graph
  ********************************/
 import { PREP_CHARS } from "./prepare.js";
 import {
@@ -12,35 +12,33 @@ import {
 	descending,
 } from "d3";
 
-/* Prepare spells data
+/* Prepare feat data
  ********************************/
-let getTotalSpells = (data) => {
-	let totalSpells = {};
+let getTotalFeat = (data) => {
+	let totalFeat = {};
 
-	// Count total taken spells
+	// Count total taken feat
 	data.forEach((character) => {
-		let spells = character.spells;
-		spells.forEach((skill) => {
-			totalSpells[skill] = (totalSpells[skill] || 0) + 1;
+		let feat = character.feats;
+		feat.forEach((skill) => {
+			totalFeat[skill] = (totalFeat[skill] || 0) + 1;
 		});
 	});
 
 	// Format the data
-	let preparedTotalSpells = Object.entries(totalSpells).map(
-		([key, value]) => ({
-			name: key,
-			value: value,
-		})
-	);
+	let preparedTotalFeat = Object.entries(totalFeat).map(([key, value]) => ({
+		name: key,
+		value: value,
+	}));
 
-	let sortedTotalSpells = preparedTotalSpells
+	let sortedTotalFeat = preparedTotalFeat
 		.sort((a, b) => descending(a.value, b.value))
-		.slice(1, 21); // remove first empty spell and keep 20 other
+		.slice(0, 20);
 
-	return sortedTotalSpells;
+	return sortedTotalFeat;
 };
 
-const DATA_SPELLS = getTotalSpells(PREP_CHARS);
+const DATA_FEAT = getTotalFeat(PREP_CHARS);
 
 /* Create SVG
  ********************************/
@@ -51,10 +49,10 @@ const margin = { top: 25, right: 80, bottom: 100, left: 80 },
 const x = scaleBand().range([0, width]).padding(0.1);
 const y = scaleLinear().range([height, 0]);
 
-x.domain(DATA_SPELLS.map((d) => d.name));
-y.domain([0, max(DATA_SPELLS, (d) => d.value)]);
+x.domain(DATA_FEAT.map((d) => d.name));
+y.domain([0, max(DATA_FEAT, (d) => d.value)]);
 
-const svg = select("#bars_spells")
+const svg = select("#bars_feat")
 	.append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
@@ -78,13 +76,13 @@ svg.append("text")
 	.attr("y", 1)
 	.attr("dy", ".75em")
 	.attr("transform", "rotate(-90) translate(-20,-70)")
-	.text("Nbr. de fois que le sort a été sélectionné");
+	.text("Nbr. de fois que la compétence a été sélectionnée");
 
 svg.selectAll(".node")
-	.data(DATA_SPELLS)
+	.data(DATA_FEAT)
 	.enter()
 	.append("rect")
-	.style("fill", "#70e7e7")
+	.style("fill", "#a591de")
 	.attr("x", (d) => x(d.name))
 	.attr("width", x.bandwidth())
 	.attr("y", (d) => y(d.value))
