@@ -8,6 +8,10 @@
 	color: var(--color-races);
 }
 
+#races .graph {
+	font-size: 0.70rem;
+}
+
 #attributes {
 	border-color: var(--color-attributes);
 }

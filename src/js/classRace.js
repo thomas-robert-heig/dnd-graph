@@ -41,16 +41,21 @@ races.forEach(race => {
 })
 
 //Initialisation
-const margin = {
-    top: 50,
-    right: 100,
-    bottom: 50,
-    left: 100
-};
+// const margin = {
+//     top: 50,
+//     right: 100,
+//     bottom: 50,
+//     left: 100
+// };
 
-let width = Math.max(Math.min(window.innerWidth, 1000), 500);
-let gridSize = Math.floor(width / classes.length);
-let height = gridSize * races.length;
+// let width = Math.max(Math.min(window.innerWidth, 1000), 500);
+// let height = gridSize * races.length;
+
+const margin = { top: 20, right: 20, bottom: 0, left: 80 },
+	width = 900 - margin.left - margin.right,
+	height = 600 - margin.top - margin.bottom;
+    let gridSize = Math.floor(width / classes.length * 0.95);
+
 
 //Construction du SVG
 let maingroup = select('#heatmap_classRace')
@@ -88,7 +93,7 @@ matrixData.forEach(function (d) {
 
 let colorScale = scaleLinear()
     .domain([0, max(matrixData, function (d) { return d.count; }) / 2, max(matrixData, function (d) { return d.count; })])
-    .range(["#f7fbff", "#6baed6", "#08306b"]);
+    .range(["#FEEBE5", "#E28263", "#FD4B13"]);
 
 let heatMap = maingroup.selectAll(".hour")
     .data(matrixData)

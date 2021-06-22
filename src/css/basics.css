@@ -22,6 +22,7 @@ h2 {
 
 section {
 	display: grid;
+	grid-gap: 25px;
 	grid-template-rows: auto 1fr auto;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
@@ -52,6 +53,7 @@ section > div.graph {
 
 section > img {
 	grid-area: illustration;
+	place-self: center;
 }
 
 .graph {
