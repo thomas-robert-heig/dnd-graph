@@ -6,59 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>DND Graph</title>
-	<style>
-		* {
-			box-sizing: border-box;
-		}
-
-		body {
-			margin: 0 auto;
-			max-width: 1080px;
-		}
-
-		section {
-			display: grid;
-			grid-template-rows: auto 1fr auto;
-			grid-template-columns: 1fr 1fr;
-			grid-template-areas:
-				"title title"
-				"graph graph"
-				"explanation illustration";
-
-			/* display: grid;
-			grid-template-rows: 1fr 1fr;
-			grid-template-columns: 1fr auto;
-			grid-template-areas:
-				"label label"
-				"input deco"; */
-		}
-
-		section>* {
-			justify-self: center;
-		}
-
-		section>h2 {
-			grid-area: title;
-		}
-
-		section>div {
-			grid-area: explanation;
-		}
-
-		section>div.graph {
-			grid-area: graph;
-		}
-
-		section>img {
-			grid-area: illustration;
-		}
-
-		.graph {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	</style>
+	<link rel="stylesheet" href="bundle.css">
 </head>
 
 <body>
@@ -100,7 +48,7 @@
 	<hr />
 
 	<!-- Caractéristiques les plus utilisées -->
-	<section>
+	<section id="attributes">
 		<h2>Répartition moyenne des caractéristiques</h2>
 		<div id="pie_attributes" class="graph"></div>
 		<div>
@@ -123,7 +71,7 @@
 
 	<hr />
 
-	<section>
+	<section id="skills">
 		<h1>Les skills les plus utilisés</h1>
 		<div id="bars_skills" class="graph"></div>
 		<div>

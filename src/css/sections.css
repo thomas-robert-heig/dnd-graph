@@ -1,0 +1,23 @@
+/********************************
+ * Sections
+ ********************************/
+#races {
+	border-color: var(--color-races);
+}
+#races h2 {
+	color: var(--color-races);
+}
+
+#attributes {
+	border-color: var(--color-attributes);
+}
+#attributes h2 {
+	color: var(--color-attributes);
+}
+
+#skills {
+	border-color: var(--color-skills);
+}
+#skills h2 {
+	color: var(--color-skills);
+}
