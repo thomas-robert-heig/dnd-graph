@@ -8,45 +8,51 @@
 		<link rel="stylesheet" href="bundle.css" />
 	</head>
 
-	<body>
-		<header>
-			<h1>DnD 5e - Quel est le personnage le plus joué?</h1>
-			<p>
-				In eu fermentum tellus. Donec egestas, quam vel imperdiet placerat,
-				libero odio vestibulum dolor, quis viverra tellus leo id mauris.
-				Quisque nulla eros, volutpat eu dignissim non, lobortis ut justo.
-				Vestibulum nec lorem hendrerit, varius ligula nec, vehicula ante.
-				Praesent sodales ligula sed lorem posuere, at sodales turpis varius.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
-				ante sed arcu ornare laoreet ultrices nec leo. Quisque tristique
-				nibh vel turpis auctor fringilla. Nulla facilisi. Nullam sodales
-				orci vitae tortor porttitor mollis. Pellentesque orci risus, posuere
-				a nisi nec, ornare consectetur mauris. Pellentesque pharetra
-				malesuada nunc et congue. Mauris eget justo vitae odio molestie
-				cursus. Etiam fermentum justo nec scelerisque euismod. Etiam
-				imperdiet maximus elit, vel pharetra lectus vehicula sed.
-			</p>
-		</header>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>DND Graph</title>
+	<link rel="stylesheet" href="bundle.css">
+</head>
 
-		<!-- Combinaison race/classe -->
-		<section id="races">
-			<h2>Cominaison race/classe la plus utilisée</h2>
-			<div id="heatmap_classRace" class="graph"></div>
+<body>
+	<header>
+		<h1>DnD 5e - Quel est le personnage le plus joué?</h1>
+		<p>
+			À quoi ressemblerait ce personnage, synthèse de la moyenne de plus de 6000 personnages créés par des
+			rôlistes de par le monde? C'est la question à laquelle nous avons voulu répondre dans le cadre de ce projet.
+			En récupérant les éléments constitutifs clés d'un personnage de Donjon et Dragons de plusieurs milliers de
+			joueurs, comme la race, la classe ou les sorts utilisés, nous avons souhaité dresser le portrait robot.
+			étape par étape, de ce personnage imaginaire.
+
+			Les données utilisées proviennent du jeu de données "dnddata" par oganm, disponible à cette adresse:
+			<a href="https://github.com/oganm/dnddata">https://github.com/oganm/dnddata</a>.
+		</p>
+	</header>
+
+	<!-- Combinaison race/classe -->
+	<section>
+		<h2>Cominaison race/classe la plus utilisée</h2>
+		<div id="heatmap_classRace" class="graph"></div>
+		<div>
 			<div>
-				<div>
-					<strong>Humain combattant</strong>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Maecenas sollicitudin sollicitudin nunc at sagittis. Vivamus
-						est magna, tincidunt vel ex sit amet, porttitor dapibus arcu.
-						Pellentesque habitant morbi tristique senectus et netus et
-						malesuada fames ac turpis egestas. Phasellus aliquet
-						ullamcorper neque, eget placerat neque consectetur nec.
-					</p>
-				</div>
+				<strong>Humain combattant</strong>
+				<p>
+					Si leur espérance de vie est inférieure à celle des elfes ou des nains, les humains cultivent une
+					soif de laisser une trace sur le monde. Attirés par la gloire, leurs puissants empires sont se sont
+					bâtis sur le commerce et la conquête.
+
+					Quoi de mieux pour assouvir ces grandes ambitions que la force et la maîtrise d'un guerrier? Ces
+					professionnels du combat peuvent compter sur toute une panoplie d'armes pour faire mordre la
+					poussière à leurs adversaires: haches, rapières, épées et arcs sont de la partie.
+				</p>
 			</div>
-			<img src="https://via.placeholder.com/150" />
-		</section>
+		</div>
+		<img src="https://via.placeholder.com/150" />
+	</section>
+
+	<hr />
 
 		<!-- Caractéristiques les plus utilisées -->
 		<section id="attributes">
@@ -54,38 +60,42 @@
 			<div id="pie_attributes" class="graph"></div>
 			<div>
 				<div>
-					<strong>Force</strong>
+					<strong>Caractéristiques équilibrées</strong>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Maecenas sollicitudin sollicitudin nunc at sagittis. Vivamus
-						est magna, tincidunt vel ex sit amet, porttitor dapibus arcu.
-						Pellentesque habitant morbi tristique senectus et netus et
-						malesuada fames ac turpis egestas. Phasellus aliquet
-						ullamcorper neque, eget placerat neque consectetur nec.
+						Les attributs d'un personnage décrivent les caractéristiques d'un personnage dans un domaine
+						donné. Les points à y attribuer étant limités, il est important de les répartir intelligemment!
+
+						La répartition des attributs de notre personnage est ici très équilibrée. Si cela peut apporter
+						l'avantage d'avoir les capacités d'un couteau suisse, ce n'est pas sans inconvénients. Le
+						résolution de problèmes d'une difficulté supérieure pourra se révéler problématique sans s'y
+						être spécifiquement préparé.
 					</p>
 				</div>
 			</div>
 			<img src="https://via.placeholder.com/150" />
-		</section>
+	</section>
+
+	<hr />
 
 		<section id="skills">
 			<h2>Les skills les plus utilisés</h2>
 			<div id="bars_skills" class="graph"></div>
 			<div>
-				<div>
-					<strong>Perception</strong>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Maecenas sollicitudin sollicitudin nunc at sagittis. Vivamus
-						est magna, tincidunt vel ex sit amet, porttitor dapibus arcu.
-						Pellentesque habitant morbi tristique senectus et netus et
-						malesuada fames ac turpis egestas. Phasellus aliquet
-						ullamcorper neque, eget placerat neque consectetur nec.
-					</p>
-				</div>
+				<strong>Perception, perspicacité, athlétisme et persuasion</strong>
+				<p>
+					La perception, suivie par la perspicacité, athlétisme et la persuasion sont les compétences clés de
+					notre personnage. Capable de détecter n'importe quel bruit ou personnage suspect, de déceler les
+					véritables intentions de ses interlocuteurs et de les influencer comme bon lui semble, notre
+					personnage ne se laissera jamais prendre par surprise. Et même si cela devait arriver, ses
+					compétences athlétiques lui permettraient de fuir avec aisance!
+				</p>
 			</div>
-			<img src="https://via.placeholder.com/150" />
-		</section>
+		</div>
+		<img src="https://via.placeholder.com/150" />
+	</section>
+
+	<script src="bundle.js"></script>
+</body>
 
 		<section id="spells">
 			<h2>Les sorts les plus utilisés</h2>
