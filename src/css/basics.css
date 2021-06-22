@@ -1,0 +1,62 @@
+/********************************
+ * The Basics
+ ********************************/
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+	max-width: 960px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+section {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"title title"
+		"graph graph"
+		"explanation illustration";
+
+	margin: var(--spacing-l) var(--spacing-s);
+	padding: var(--spacing-s);
+	border: 1px solid black;
+}
+
+section > * {
+	justify-self: center;
+}
+
+section > h2 {
+	grid-area: title;
+}
+
+section > div {
+	grid-area: explanation;
+}
+
+section > div.graph {
+	grid-area: graph;
+}
+
+section > img {
+	grid-area: illustration;
+}
+
+.graph {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+}

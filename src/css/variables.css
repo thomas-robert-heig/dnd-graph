@@ -1,0 +1,15 @@
+/********************************
+ * Variables
+ ********************************/
+:root {
+	--color-races: #e26363;
+	--color-attributes: #e28263;
+	--color-skills: #e3ce5d;
+	--color-spells: #70e7e7;
+	--color-feat: #a591de;
+	--color-align: #a384b1;
+
+	--spacing-s: 25px;
+	--spacing-m: 50px;
+	--spacing-l: 100px;
+}

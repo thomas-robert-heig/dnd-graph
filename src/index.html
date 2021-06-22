@@ -5,59 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>DND Graph</title>
-		<style>
-			* {
-				box-sizing: border-box;
-			}
-
-			body {
-				margin: 0 auto;
-				max-width: 1080px;
-			}
-
-			section {
-				display: grid;
-				grid-template-rows: auto 1fr auto;
-				grid-template-columns: 1fr 1fr;
-				grid-template-areas:
-					"title title"
-					"graph graph"
-					"explanation illustration";
-
-				/* display: grid;
-			grid-template-rows: 1fr 1fr;
-			grid-template-columns: 1fr auto;
-			grid-template-areas:
-				"label label"
-				"input deco"; */
-			}
-
-			section > * {
-				justify-self: center;
-			}
-
-			section > h2 {
-				grid-area: title;
-			}
-
-			section > div {
-				grid-area: explanation;
-			}
-
-			section > div.graph {
-				grid-area: graph;
-			}
-
-			section > img {
-				grid-area: illustration;
-			}
-
-			.graph {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-		</style>
+		<link rel="stylesheet" href="bundle.css">
 	</head>
 
 	<body>
@@ -81,7 +29,7 @@
 		</header>
 
 		<!-- Combinaison race/classe -->
-		<section>
+		<section id="races">
 			<h2>Cominaison race/classe la plus utilisée</h2>
 			<div id="heatmap_classRace" class="graph"></div>
 			<div>
@@ -100,10 +48,8 @@
 			<img src="https://via.placeholder.com/150" />
 		</section>
 
-		<hr />
-
 	<!-- Caractéristiques les plus utilisées -->
-	<section>
+	<section id="attributes">
 		<h2>Top 3 des caractéristiques les plus utilisées</h2>
 		<div id="pie_attributes" class="graph"></div>
 		<div>
@@ -123,9 +69,7 @@
 			<img src="https://via.placeholder.com/150" />
 		</section>
 
-		<hr />
-
-		<section>
+		<section id="skills">
 			<h1>Les skills les plus utilisés</h1>
 			<div id="bars_skills" class="graph"></div>
 			<div>
