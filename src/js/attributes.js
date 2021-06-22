@@ -1,6 +1,7 @@
 import { PREP_CHARS } from "./prepare.js";
 import { pie, select, arc } from "d3";
 
+//Préparation des données
 let chaValues = [];
 let conValues = [];
 let dexValues = [];
@@ -26,12 +27,14 @@ const DATA = [
     { name: 'Wisdom', value: (wisValues.reduce((a, b) => a + b, 0) / wisValues.length) },
 ]
 
+//Initialisation
 let getPieData = pie().value(d => d.value);
 let pieData = getPieData(DATA);
 
 const WIDTH = 500;
 const HEIGHT = 500;
 
+//Construction du svg
 const svg = select('#pie_attributes')
     .append('svg')
     .attr("width", WIDTH)
@@ -67,6 +70,7 @@ group.selectAll('path')
     .attr("stroke", "white")
     .style("stroke-width", "2px");
 
+//Ajout du texte
 group.selectAll('text')
     .data(pieData)
     .enter()
@@ -74,6 +78,5 @@ group.selectAll('text')
     .attr('transform', d => `translate(${arcCreator.centroid(d)})`)
     .attr('text-anchor', 'middle')
     .attr('font-family', 'sans-serif')
-    // .text(d => d.data.name)
     .text(function(d) { return d.data.name + ": " + Math.round(d.data.value) + "%" })
    

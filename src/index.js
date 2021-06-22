@@ -1,23 +1,21 @@
-/********************************
- * Preparation
- ********************************/
-
 /* Import & Settings
  ********************************/
 import "./index.css";
-import { select, sum, scaleLinear, max } from "d3";
-import "./js/classRace";
-import "./js/attributes";
-import "./js/skills";
-import "./js/spells";
-import "./js/feats";
-import "./js/alignments";
 
-/* Define canvas
- ********************************/
-const canvas = select("#graph")
-	.append("svg")
-	.attr("width", 500)
-	.attr("height", 500)
-	.append("g")
-	.attr("transform", "translate(40,0)");
+//#1 Heatmap: Combinaison race/classe la plus utilisée
+import "./js/classRace";
+
+//#2 Pie chart: Répartition moyenne des caractéristiques
+import "./js/attributes";
+
+//#3 Bar chart: Les compétences les plus utilisées
+import "./js/skills";
+
+//#4 Bar chart: Les sorts les plus utilisées
+import "./js/spells";
+
+//#5 Bar chart: Les dons les plus utilisées
+import "./js/feats";
+
+//#6 Heatmap: Combinaison d'alignements la plus utilisée
+import "./js/alignments";
