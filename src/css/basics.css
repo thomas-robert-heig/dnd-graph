@@ -39,6 +39,7 @@ section {
 
 section > * {
 	justify-self: center;
+	place-self: center;
 }
 
 section > h2 {
