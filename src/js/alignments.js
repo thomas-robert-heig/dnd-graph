@@ -70,7 +70,7 @@ let maingroup = select('#heatmap_alignments')
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //Intégration des deux axes
-let raceLabels = maingroup.selectAll(".raceLabel")
+let colLabels = maingroup.selectAll(".colLabel")
     .data(cols)
     .enter().append("text")
     .text(function (d) { return d; })
@@ -79,7 +79,7 @@ let raceLabels = maingroup.selectAll(".raceLabel")
     .attr("transform", "translate(-6," + gridSize / 2 + ")")
     .style("text-anchor", "end");
 
-var classLabels = maingroup.selectAll(".classLabel")
+var rowLabels = maingroup.selectAll(".rowLabel")
     .data(rows)
     .enter().append("text")
     .text(function (d) { return d; })
@@ -88,16 +88,12 @@ var classLabels = maingroup.selectAll(".classLabel")
     .attr("transform", "translate(" + gridSize / 2 + ", -6)")
     .style("text-anchor", "middle");
 
-matrixData.forEach(function (d) {
-    d.race = +d.race;
-    d.class = +d.class;
-    d.count = +d.count;
-});
-
+//Gestion de la couleur
 let colorScale = scaleLinear()
     .domain([0, max(matrixData, function (d) { return d.count; }) / 2, max(matrixData, function (d) { return d.count; })])
     .range(["#F1D7FE", "#A384B1", "#6C447E"]);
 
+//Mise en place des réctangles
 let heatMap = maingroup.selectAll(".hour")
     .data(matrixData)
     .enter().append("rect")

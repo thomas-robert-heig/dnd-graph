@@ -3,10 +3,10 @@ import { select, sum, scaleLinear, max } from "d3";
 
 const races = ['Dragonborn', 'Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Halfling', 'Half-Orc', 'Human', 'Tiefling'];
 const classes = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard'];
-let matrixData = [];
-let raceCounter = 0;
 
 //Préparation des données
+let matrixData = [];
+let raceCounter = 0;
 races.forEach(race => {
 
     //Récupérer tous les personnages d'une race donnée
@@ -41,20 +41,10 @@ races.forEach(race => {
 })
 
 //Initialisation
-// const margin = {
-//     top: 50,
-//     right: 100,
-//     bottom: 50,
-//     left: 100
-// };
-
-// let width = Math.max(Math.min(window.innerWidth, 1000), 500);
-// let height = gridSize * races.length;
-
 const margin = { top: 20, right: 20, bottom: 0, left: 80 },
-	width = 900 - margin.left - margin.right,
-	height = 600 - margin.top - margin.bottom;
-    let gridSize = Math.floor(width / classes.length * 0.95);
+    width = 900 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom,
+    gridSize = Math.floor(width / classes.length * 0.95);
 
 
 //Construction du SVG
@@ -91,10 +81,12 @@ matrixData.forEach(function (d) {
     d.count = +d.count;
 });
 
+//Gestion de la couleur
 let colorScale = scaleLinear()
     .domain([0, max(matrixData, function (d) { return d.count; }) / 2, max(matrixData, function (d) { return d.count; })])
     .range(["#FEEBE5", "#E28263", "#FD4B13"]);
 
+//Mise en place des réctangles
 let heatMap = maingroup.selectAll(".hour")
     .data(matrixData)
     .enter().append("rect")
