@@ -15,6 +15,7 @@ import "./js/skills";
 import "./js/spells";
 
 //#5 Bar chart: Les dons les plus utilisées
+import "./js/feats";
 
 //#6 Heatmap: Combinaison d'alignements la plus utilisée
 import "./js/alignments";

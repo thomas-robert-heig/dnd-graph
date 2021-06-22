@@ -78,7 +78,7 @@ svg.append("text")
 	.attr("y", 1)
 	.attr("dy", ".75em")
 	.attr("transform", "rotate(-90) translate(-20,-70)")
-	.text("Nbr. de fois que la compétence a été sélectionnée");
+	.text("Nbr. de fois que la caractéristique a été sélectionnée");
 
 svg.selectAll(".node")
 	.data(DATA_SKILLS)
