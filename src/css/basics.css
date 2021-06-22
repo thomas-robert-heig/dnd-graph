@@ -64,3 +64,7 @@ section > img {
 	align-items: center;
 	max-width: 100%;
 }
+
+.label {
+	font-size: 0.7rem;
+}
