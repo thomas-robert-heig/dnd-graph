@@ -38,10 +38,10 @@
 }
 
 #feats {
-	border-color: var(--color-feats);
+	border-color: var(--color-feat);
 }
 #feats h2 {
-	color: var(--color-feats);
+	color: var(--color-feat);
 }
 
 #alignments {
