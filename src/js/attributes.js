@@ -18,12 +18,12 @@ PREP_CHARS.forEach(character => {
 });
 
 const DATA = [
-    { name: 'Charisme', value: (chaValues.reduce((a, b) => a + b, 0) / chaValues.length) },
+    { name: 'Charisma', value: (chaValues.reduce((a, b) => a + b, 0) / chaValues.length) },
     { name: 'Constitution', value: (conValues.reduce((a, b) => a + b, 0) / conValues.length) },
-    { name: 'Dexterité', value: (dexValues.reduce((a, b) => a + b, 0) / dexValues.length) },
+    { name: 'Dexterity', value: (dexValues.reduce((a, b) => a + b, 0) / dexValues.length) },
     { name: 'Intelligence', value: (intValues.reduce((a, b) => a + b, 0) / intValues.length) },
-    { name: 'Force', value: (strValues.reduce((a, b) => a + b, 0) / strValues.length) },
-    { name: 'Sagesse', value: (wisValues.reduce((a, b) => a + b, 0) / wisValues.length) },
+    { name: 'Strength', value: (strValues.reduce((a, b) => a + b, 0) / strValues.length) },
+    { name: 'Wisdom', value: (wisValues.reduce((a, b) => a + b, 0) / wisValues.length) },
 ]
 
 let getPieData = pie().value(d => d.value);
@@ -45,12 +45,12 @@ const arcCreator = arc()
 //Définition de la couleur
 const color = ({ data }) => {
     switch (data.name) {
-        case 'Charisme': return 'blue'
-        case 'Constitution': return 'red'
-        case 'Dexterité': return 'green'
-        case 'Intelligence': return 'orange'
-        case 'Force': return 'yellow'
-        case 'Sagesse': return 'purple'
+        case 'Charisma': return '#E65B07'
+        case 'Constitution': return '#F86A12'
+        case 'Dexterity': return '#F87625'
+        case 'Intelligence': return '#F98339'
+        case 'Strength': return '#F98F4D'
+        case 'Wisdom': return '#F99C62'
     }
 }
 
@@ -72,7 +72,6 @@ group.selectAll('text')
     .attr('transform', d => `translate(${arcCreator.centroid(d)})`)
     .attr('text-anchor', 'middle')
     .attr('font-family', 'sans-serif')
-    // .attr('font-size', '1.2rem')
     // .text(d => d.data.name)
     .text(function(d) { return d.data.name + ": " + Math.round(d.data.value) + "%" })
    
