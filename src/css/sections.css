@@ -9,7 +9,7 @@
 }
 
 #races .graph {
-	font-size: 0.70rem;
+	font-size: 0.7rem;
 }
 
 #attributes {
@@ -38,8 +38,8 @@
 }
 #feats h2 {
 	color: var(--color-feats);
+}
 
-	
 #alignments {
 	border-color: var(--color-align);
 }
