@@ -46,7 +46,7 @@ console.log(DATA_SPELLS);
 
 /* Create SVG
  ********************************/
-const margin = { top: 25, right: 80, bottom: 100, left: 40 },
+const margin = { top: 25, right: 80, bottom: 100, left: 80 },
 	width = 800 - margin.left - margin.right,
 	height = 400 - margin.top - margin.bottom;
 
@@ -73,6 +73,14 @@ svg.append("g")
 	.attr("transform", "rotate(-65)");
 
 svg.append("g").call(axisLeft(y).ticks(6));
+
+svg.append("text")
+	.attr("class", "y label")
+	.attr("text-anchor", "end")
+	.attr("y", 1)
+	.attr("dy", ".75em")
+	.attr("transform", "rotate(-90) translate(-20,-70)")
+	.text("Nbr. de fois que le sort a été sélectionné");
 
 svg.selectAll(".node")
 	.data(DATA_SPELLS)
