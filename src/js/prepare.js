@@ -24,7 +24,7 @@ const PREP_CHARS = CHARS.map(([nom, data]) => ({ ...data, nom }))
 		feats: d?.feats,
 		weapons: getWeapons(d?.weapons),
 		alignment: d.alignment.processedAlignment[0],
-		attributes : d.attributes
+		attributes: d.attributes,
 	}))
 	.filter(
 		(d) =>
@@ -54,5 +54,4 @@ const PREP_CHARS = CHARS.map(([nom, data]) => ({ ...data, nom }))
 			d.class == "Wizard"
 	);
 
-	console.log(PREP_CHARS);
 export { PREP_CHARS };

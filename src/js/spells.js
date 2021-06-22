@@ -1,5 +1,5 @@
 /********************************
- * Skills graph
+ * Spells graph
  ********************************/
 import { PREP_CHARS } from "./prepare.js";
 import {
@@ -12,35 +12,37 @@ import {
 	descending,
 } from "d3";
 
-/* Prepare skills data
+/* Prepare spells data
  ********************************/
-let getTotalSkills = (data) => {
-	let totalSkills = {};
+let getTotalSpells = (data) => {
+	let totalSpells = {};
 
-	// Count total taken skills
+	// Count total taken spells
 	data.forEach((character) => {
-		let skills = character.skills;
-		skills.forEach((skill) => {
-			totalSkills[skill] = (totalSkills[skill] || 0) + 1;
+		let spells = character.spells;
+		spells.forEach((skill) => {
+			totalSpells[skill] = (totalSpells[skill] || 0) + 1;
 		});
 	});
 
 	// Format the data
-	let preparedTotalSkills = Object.entries(totalSkills).map(
+	let preparedTotalSpells = Object.entries(totalSpells).map(
 		([key, value]) => ({
 			name: key,
 			value: value,
 		})
 	);
 
-	let sortedTotalSKills = preparedTotalSkills
-		.slice()
-		.sort((a, b) => descending(a.value, b.value));
+	let sortedTotalSpells = preparedTotalSpells
+		.sort((a, b) => descending(a.value, b.value))
+		.slice(1, 21); // remove first empty spell and keep 20 other
 
-	return sortedTotalSKills;
+	return sortedTotalSpells;
 };
 
-const DATA_SKILLS = getTotalSkills(PREP_CHARS);
+const DATA_SPELLS = getTotalSpells(PREP_CHARS);
+
+console.log(DATA_SPELLS);
 
 /* Create SVG
  ********************************/
@@ -51,10 +53,10 @@ const margin = { top: 25, right: 80, bottom: 100, left: 40 },
 const x = scaleBand().range([0, width]).padding(0.1);
 const y = scaleLinear().range([height, 0]);
 
-x.domain(DATA_SKILLS.map((d) => d.name));
-y.domain([0, max(DATA_SKILLS, (d) => d.value)]);
+x.domain(DATA_SPELLS.map((d) => d.name));
+y.domain([0, max(DATA_SPELLS, (d) => d.value)]);
 
-const svg = select("#bars_skills")
+const svg = select("#bars_spells")
 	.append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
@@ -73,10 +75,10 @@ svg.append("g")
 svg.append("g").call(axisLeft(y).ticks(6));
 
 svg.selectAll(".node")
-	.data(DATA_SKILLS)
+	.data(DATA_SPELLS)
 	.enter()
 	.append("rect")
-	.style("fill", "#e3ce5d")
+	.style("fill", "#70e7e7")
 	.attr("x", (d) => x(d.name))
 	.attr("width", x.bandwidth())
 	.attr("y", (d) => y(d.value))

@@ -6,9 +6,10 @@
  ********************************/
 import "./index.css";
 import { select, sum, scaleLinear, max } from "d3";
-import "./js/skills";
 import "./js/classRace";
 import "./js/attributes";
+import "./js/skills";
+import "./js/spells";
 
 /* Define canvas
  ********************************/
