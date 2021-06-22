@@ -77,6 +77,7 @@ group.selectAll('text')
     .append('text')
     .attr('transform', d => `translate(${arcCreator.centroid(d)})`)
     .attr('text-anchor', 'middle')
+    .attr('text-align', 'center')
     .attr('font-family', 'sans-serif')
     .text(function(d) { return d.data.name + ": " + Math.round(d.data.value) + "%" })
    

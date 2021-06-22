@@ -1,14 +1,13 @@
 import { PREP_CHARS } from "./prepare.js";
 import { select, sum, scaleLinear, max } from "d3";
 
+//Préparation des données
 const races = ['Dragonborn', 'Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Halfling', 'Half-Orc', 'Human', 'Tiefling'];
 const classes = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard'];
-
-//Préparation des données
 let matrixData = [];
 let raceCounter = 0;
-races.forEach(race => {
 
+races.forEach(race => {
     //Récupérer tous les personnages d'une race donnée
     let tempArray = [];
     PREP_CHARS.forEach(CHAR => {
@@ -75,19 +74,13 @@ var classLabels = maingroup.selectAll(".classLabel")
     .attr("transform", "translate(" + gridSize / 2 + ", -6)")
     .style("text-anchor", "middle");
 
-matrixData.forEach(function (d) {
-    d.race = +d.race;
-    d.class = +d.class;
-    d.count = +d.count;
-});
-
 //Gestion de la couleur
 let colorScale = scaleLinear()
     .domain([0, max(matrixData, function (d) { return d.count; }) / 2, max(matrixData, function (d) { return d.count; })])
     .range(["#FEEBE5", "#E28263", "#FD4B13"]);
 
 //Mise en place des réctangles
-let heatMap = maingroup.selectAll(".hour")
+let heatMap = maingroup.selectAll(".rect")
     .data(matrixData)
     .enter().append("rect")
     .attr("x", function (d) { return d.x * gridSize; })
