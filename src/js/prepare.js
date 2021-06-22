@@ -53,4 +53,6 @@ const PREP_CHARS = CHARS.map(([nom, data]) => ({ ...data, nom }))
 			d.class == "Warlock" ||
 			d.class == "Wizard"
 	);
+
+	console.log(PREP_CHARS);
 export { PREP_CHARS };
