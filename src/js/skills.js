@@ -44,7 +44,7 @@ const DATA_SKILLS = getTotalSkills(PREP_CHARS);
 
 /* Create SVG
  ********************************/
-const margin = { top: 20, right: 20, bottom: 90, left: 120 },
+const margin = { top: 25, right: 80, bottom: 100, left: 40 },
 	width = 800 - margin.left - margin.right,
 	height = 400 - margin.top - margin.bottom;
 
@@ -76,6 +76,7 @@ svg.selectAll(".node")
 	.data(DATA_SKILLS)
 	.enter()
 	.append("rect")
+	.style("fill", "#e3ce5d")
 	.attr("x", (d) => x(d.name))
 	.attr("width", x.bandwidth())
 	.attr("y", (d) => y(d.value))

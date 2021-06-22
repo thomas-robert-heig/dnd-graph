@@ -13,11 +13,13 @@ body {
 
 header {
 	max-width: 720px;
-	margin: 0 auto;
+	margin: var(--spacing-m) auto 0;
 }
 
+h1,
 h2 {
 	margin-top: 0;
+	text-align: center;
 }
 
 section {
