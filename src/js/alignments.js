@@ -1,14 +1,9 @@
 import { PREP_CHARS } from "./prepare.js";
 import { select, scaleLinear, max } from "d3";
 
-
+//Préparation des données
 const cols = ['Lawful', 'Neutral', 'Chaotic'];
 const rows = ['Good', 'Neutral', 'Evil'];  
-
-
-
-
-//Préparation des données
 let matrixData = [];
 let colCounter = 0;
 
@@ -20,7 +15,6 @@ PREP_CHARS.forEach(CHAR => {
 });
 
 cols.forEach(col => {
-
     //Récupérer tous les personnages d'un alignment (cols) donné
     let tempArray = [];
     ALIGN_CHARS.forEach(CHAR => {
@@ -52,13 +46,11 @@ cols.forEach(col => {
     colCounter++;
 })
 
-
 //Initialisation
 const margin = { top: 20, right: 20, bottom: 0, left: 80 },
 	width = 700 - margin.left - margin.right,
 	height = 600 - margin.top - margin.bottom;
     let gridSize = Math.floor(width / rows.length * 0.95);
-
 
 //Construction du SVG
 let maingroup = select('#heatmap_alignments')
@@ -76,7 +68,7 @@ let colLabels = maingroup.selectAll(".colLabel")
     .text(function (d) { return d; })
     .attr("x", 0)
     .attr("y", function (d, i) { return i * gridSize; })
-    .attr("transform", "translate(-6," + gridSize / 2 + ")")
+    .attr("transform", "translate(-10," + gridSize / 2 + ")")
     .style("text-anchor", "end");
 
 var rowLabels = maingroup.selectAll(".rowLabel")
@@ -85,7 +77,7 @@ var rowLabels = maingroup.selectAll(".rowLabel")
     .text(function (d) { return d; })
     .attr("x", function (d, i) { return i * gridSize; })
     .attr("y", 0)
-    .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+    .attr("transform", "translate(" + gridSize / 2 + ", -10)")
     .style("text-anchor", "middle");
 
 //Gestion de la couleur
