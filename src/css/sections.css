@@ -21,3 +21,10 @@
 #skills h2 {
 	color: var(--color-skills);
 }
+
+#spells {
+	border-color: var(--color-spells);
+}
+#spells h2 {
+	color: var(--color-spells);
+}

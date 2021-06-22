@@ -34,8 +34,8 @@ let getTotalSpells = (data) => {
 	);
 
 	let sortedTotalSpells = preparedTotalSpells
-		.slice()
-		.sort((a, b) => descending(a.value, b.value));
+		.sort((a, b) => descending(a.value, b.value))
+		.slice(1, 21); // remove first empty spell and keep 20 other
 
 	return sortedTotalSpells;
 };
@@ -78,7 +78,7 @@ svg.selectAll(".node")
 	.data(DATA_SPELLS)
 	.enter()
 	.append("rect")
-	.style("fill", "#e3ce5d")
+	.style("fill", "#70e7e7")
 	.attr("x", (d) => x(d.name))
 	.attr("width", x.bandwidth())
 	.attr("y", (d) => y(d.value))
